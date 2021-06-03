@@ -33,6 +33,7 @@ class HomeController extends Controller {
             'name' => 'required|string',
             'model' => 'required|string',
             'kW' => 'required|integer',
+            'brand_id' => 'required|integer'
         ]);
 
         $brand = Brand::findOrFail($request -> get('brand_id'));
