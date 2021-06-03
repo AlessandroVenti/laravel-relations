@@ -15,7 +15,7 @@
                               </a>
                          </p>
                          <p>
-                              <a href="{{route('brand', $car -> id)}}">
+                              <a href="{{ route('brand', $car -> id) }}">
                                    Click here for see the BRAND.
                               </a>
                          </p>                             
@@ -25,7 +25,7 @@
           </ul>
 
           <button>
-               <a href="">
+               <a href="{{ route('create') }}">
                     Create new pilote
                </a>
           </button>

@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
+  list-style-type: none;
 }
 
 .layout {
@@ -27,6 +28,57 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.layout main .form {
+  font-size: 20px;
+  flex-basis: 40%;
+}
+
+.layout main .form fieldset {
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #c5c5c5;
+}
+
+.layout main .form fieldset legend {
+  padding: 0 20px;
+}
+
+.layout main .form input {
+  width: 100%;
+  margin: 10px 0 20px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  font-size: 15px;
+  background: #9191ee;
+  box-shadow: inset 5px 5px 10px #7b7bca, inset -5px -5px 10px #a7a7ff;
+}
+
+.layout main .form input.submit {
+  box-shadow: 5px 5px 10px #7b7bca, -5px -5px 10px #a7a7ff;
+}
+
+.layout main .form input.submit:active {
+  box-shadow: inset 5px 5px 10px #7b7bca, inset -5px -5px 10px #a7a7ff;
+}
+
+.layout main .form .card {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.layout main .form select {
+  float: right;
+  background-color: #f0ffff;
+  border: 0;
+  font-size: 18px;
+  box-shadow: 5px 5px 10px #ccd9d9, -5px -5px 10px #ffffff;
+}
+
+.layout main .form h3 {
+  margin: 20px 0;
 }
 
 .layout footer {

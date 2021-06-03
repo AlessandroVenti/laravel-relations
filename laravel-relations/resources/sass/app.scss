@@ -6,6 +6,7 @@
      padding: 0;
      box-sizing: border-box;
      font-family: $nunito;
+     list-style-type: none;
 }
 
 .layout {
@@ -28,6 +29,61 @@
           background-color: rgb(145, 145, 238);
           grid-area: main;
           @include flex;
+
+          .form {
+               font-size: 20px;
+               flex-basis: 40%;
+           }
+           
+           .form fieldset {
+               padding: 40px;
+               border-radius: 10px;
+               border: 1px solid rgb(197, 197, 197);
+           }
+           
+           .form fieldset legend {
+               padding: 0 20px;
+           }
+           
+           .form input {
+               width: 100%;
+               margin: 10px 0 20px 0;
+               padding: 10px;
+               border-radius: 10px;
+               border: 0;
+               font-size: 15px;
+               background: #9191ee;
+               box-shadow: inset 5px 5px 10px #7b7bca,
+                           inset -5px -5px 10px #a7a7ff;
+           }
+
+           .form input.submit {
+                box-shadow: 5px 5px 10px #7b7bca,
+                         -5px -5px 10px #a7a7ff;
+           }
+
+           .form input.submit:active {
+               box-shadow: inset 5px 5px 10px #7b7bca,
+                         inset -5px -5px 10px #a7a7ff;
+          }
+           
+           .form .card {
+               margin-bottom: 20px;
+               display: inline-block;
+           }
+           
+           .form select {
+               float: right;
+               background-color: #f0ffff;
+               border: 0;
+               font-size: 18px;
+               box-shadow:  5px 5px 10px #ccd9d9,
+                           -5px -5px 10px #ffffff;
+           }
+           
+           .form h3 {
+               margin: 20px 0;
+           }
      }
 
      footer {

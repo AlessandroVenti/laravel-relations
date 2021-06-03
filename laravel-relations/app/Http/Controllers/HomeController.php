@@ -22,5 +22,9 @@ class HomeController extends Controller {
         $brand = Brand::findOrFail($id);
         return view('pages.brand', compact('brand'));
     }
+
+    public function createFunction() {
+        return view('pages.create');
+    }
     
 }
