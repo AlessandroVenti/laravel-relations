@@ -2,11 +2,11 @@
 
 @section('content')
      <main>
-          <form class="form" action="/">
+          <form method="POST" class="form" action="{{ route('store') }}">
                <fieldset>
                     @csrf
                     @method('POST')
-                   <legend>New Pilot Form</legend>
+                   <legend>New Car Form</legend>
                    <h3>Contact information</h2>
                    <ul>
                        <li>
@@ -18,28 +18,32 @@
                        </li>
 
                        <li>
-                           <label for="lastname">
-                               <span>Lastname: </span>
+                           <label for="model">
+                               <span>Model: </span>
                                <abbr title="required">*</abbr>
                            </label>
-                           <input type="text" name="lastname" id="lastname">
+                           <input type="text" name="model" id="model">
                        </li>
 
                        <li>
-                           <label for="nationality">
-                               <span>Nationality: </span>
+                           <label for="kW">
+                               <span>kW: </span>
                                <abbr title="required">*</abbr>
                            </label>
-                           <input type="text" name="nationality" id="nationality">
+                           <input type="text" name="kW" id="kW">
                        </li>
 
                        <li>
-                           <label for="date_of_birth">
-                              <span>Date of Birth: </span>
-                              <abbr title="required">*</abbr>
-                           </label>
-                           <input type="date" name="date_of_birth" id="date_of_birth">
-                       </li>
+                         <label for="brand_id">
+                             <span>Brand: </span>
+                             <abbr title="required">*</abbr>
+                         </label>
+                         <select name="brand_id" id="brand_id">
+                              @foreach ($brands as $brand)
+                              <option value="{{ $brand -> id }}">{{ $brand -> name }} , {{ $brand -> nationality }} </option>
+                              @endforeach
+                         </select>
+                     </li>
 
                        <li>
                          <input class="submit" type="submit" placeholder="CREATE">

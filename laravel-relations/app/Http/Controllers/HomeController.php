@@ -24,7 +24,22 @@ class HomeController extends Controller {
     }
 
     public function createFunction() {
-        return view('pages.create');
+        $brands = Brand::all();
+        return view('pages.create', compact('brands'));
+    }
+
+    public function storeFunction(Request $request) {
+        $validated = $request -> validate([
+            'name' => 'required|string',
+            'model' => 'required|string',
+            'kW' => 'required|integer',
+        ]);
+
+        $brand = Brand::findOrFail($request -> get('brand_id'));
+        $car = Car::make($validated);
+        $car->brand()->associate($brand);
+        $car->save();
+        return redirect()->route('home');
     }
     
 }
